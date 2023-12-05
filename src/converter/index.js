@@ -2,7 +2,6 @@ const fs = require("fs-extra");
 const { JSDOM } = require("jsdom");
 
 const io = require("./io");
-const latexml = require("./latexml");
 const math = require("./math");
 const postprocessors = require("./postprocessor");
 
@@ -46,21 +45,12 @@ async function processHTML(htmlPath, options) {
  * @param {string} [options.biblioGluttonUrl]
  */
 async function render({
-  input,
   output,
-  postProcessing,
   externalCSS,
   externalJavaScript,
-  biblioGluttonUrl,
-  grobidUrl,
 }) {
-  if (postProcessing === undefined) {
-    postProcessing = true;
-  }
 
-  const inputDir = await io.prepareInputDirectory(input);
-  const texPath = await io.pickLatexFile(inputDir);
-  const outputDir = await io.prepareOutputDirectory(output);
+  const htmlPath = await io.normalizeDirectory(output);
 
   // If there are external assets, don't let LaTeXML copy it to the output
   // directory - we will handle it ourselves
@@ -71,24 +61,10 @@ async function render({
     ? null
     : "/app/dist/javascript/index.js";
 
-  console.log(`Rendering tex file ${texPath} to ${outputDir}`);
-  const htmlPath = await latexml.render({
-    texPath,
-    outputDir,
-    cssPath,
-    javaScriptPath,
-  });
-
   await processHTML(htmlPath, {
     externalCSS,
     externalJavaScript,
-    biblioGluttonUrl,
-    grobidUrl,
   });
-
-  if (output.startsWith("s3://")) {
-    await io.uploadOutputToS3(outputDir, output);
-  }
 
   return htmlPath;
 }

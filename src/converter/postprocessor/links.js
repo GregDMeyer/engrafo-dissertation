@@ -41,20 +41,4 @@ module.exports = function (document) {
     replacementNode.innerHTML = obj.replacement;
     obj.node.parentNode.replaceChild(replacementNode, obj.node);
   });
-
-  // Add http:// to URLs which don't have it
-  Array.from(document.querySelectorAll("a")).forEach((a) => {
-    var href = a.getAttribute("href");
-    if (!href) {
-      return;
-    }
-    if (
-      !href.startsWith("http://") &&
-      !href.startsWith("https://") &&
-      !href.startsWith("#") &&
-      !href.startsWith("mailto:")
-    ) {
-      a.setAttribute("href", "http://" + href);
-    }
-  });
 };
