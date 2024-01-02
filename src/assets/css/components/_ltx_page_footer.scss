@@ -1,3 +1,25 @@
-.ltx_page_footer {
+@import "../fonts";
+
+.ltx_ref[rel~=prev] {
+    @include font-sans();
+    float: left;
+}
+
+.ltx_ref[rel~=up] {
+    @include font-sans();
+    text-align: center;
+    display: block;
+}
+
+.ltx_ref[rel~=next] {
+    @include font-sans();
+    float: right;
+}
+
+footer .ltx_ref[rel~=bibliography] {
+    display: none;
+}
+
+.ltx_page_logo {
   display: none;
 }
