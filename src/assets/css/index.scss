@@ -1,6 +1,16 @@
-// TODO: don't set any global styles
+
 body {
-  margin: 0;
+    background-color: white;
+    color: black;
+    margin: 0;
+}
+
+// dark mode
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #222;
+        color: #CCC
+    }
 }
 
 // Contain everything inside .ltx_page_main
