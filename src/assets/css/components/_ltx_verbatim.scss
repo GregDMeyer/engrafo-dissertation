@@ -3,3 +3,13 @@
 .ltx_verbatim {
   @include font-monospace();
 }
+
+pre code {
+    border: 2px solid #BBB;
+}
+
+@media (prefers-color-scheme: dark) {
+    pre code {
+        border: 2px solid #666;
+    }
+}
