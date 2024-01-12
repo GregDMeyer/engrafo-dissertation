@@ -6,7 +6,7 @@
 
   border-collapse: collapse;
 
-  margin: 2em 0;
+  margin: 0;
 
   .ltx_td,
   .ltx_th {
@@ -51,6 +51,37 @@
   }
   .ltx_border_ll {
     border-left: 1px solid $borderColor;
+  }
+
+  @media (prefers-color-scheme: dark) {
+      // Normal borders
+      .ltx_border_t {
+          border-top: 1px solid $darkThemeBorderColor;
+      }
+      .ltx_border_r {
+          border-right: 1px solid $darkThemeBorderColor;
+      }
+      .ltx_border_b {
+          border-bottom: 1px solid $darkThemeBorderColor;
+      }
+      .ltx_border_l {
+          border-left: 1px solid $darkThemeBorderColor;
+      }
+
+      // Double borders
+      // For now, make these just the same as normal borders.
+      .ltx_border_tt {
+          border-top: 1px solid $darkThemeBorderColor;
+      }
+      .ltx_border_rr {
+          border-right: 1px solid $darkThemeBorderColor;
+      }
+      .ltx_border_bb {
+          border-bottom: 1px solid $darkThemeBorderColor;
+      }
+      .ltx_border_ll {
+          border-left: 1px solid $darkThemeBorderColor;
+      }
   }
 
   // Light borders

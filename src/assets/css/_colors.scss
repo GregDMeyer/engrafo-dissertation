@@ -1,5 +1,6 @@
 // Don't use alpha, because borders mix together
 $borderColor: black;
+$darkThemeBorderColor: #DDD;
 $lightBorderColor: lighten(black, 50%);
 
 $secondaryBackground: darken(white, 5%);

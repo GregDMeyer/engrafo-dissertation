@@ -1,5 +1,5 @@
 // Only top-level figures, not subfigures
-*:not(.ltx_subfigure) > .ltx_figure {
+.ltx_figure {
   margin: 4rem 0;
 
   max-width: 100%;
@@ -9,4 +9,13 @@
   .ltx_caption {
     margin-top: 1em;
   }
+}
+
+.ltx_figure .ltx_figure {
+    margin: 2em 0;
+}
+
+.ltx_graphics {
+    background-color: white;
+    padding: 10px;
 }
