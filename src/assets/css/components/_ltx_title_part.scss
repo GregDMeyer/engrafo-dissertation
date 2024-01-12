@@ -1,0 +1,25 @@
+@import "../fonts";
+@import "../media";
+
+.ltx_title_part {
+  font-family: $fontFamilyComputerModern;
+  font-weight: normal;
+  margin: 2em 0;
+
+  font-size: 22px !important;
+  line-height: 1.1;
+
+  @include media("<huge", ">=tablet") {
+    font-size: 34px !important;
+    min-height: 2em;
+  }
+  @include media(">=huge") {
+    font-size: 45px !important;
+    min-height: 2em;
+  }
+
+  .ltx_tag_part {
+    display: block;
+    margin-bottom: 1em;
+  }
+}
