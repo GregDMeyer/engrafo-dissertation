@@ -13,3 +13,8 @@
     list-style-type: none;
   }
 }
+
+// give some space in the part TOC's
+.ltx_part .ltx_para + .ltx_TOC {
+    margin: 2em 0 0 0;
+}
