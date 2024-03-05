@@ -13,7 +13,10 @@
   }
 
   .ltx_engrafo_note_mark_tooltip {
-    color: $linkColor;
+    color: $linkLightColor;
+    @media (prefers-color-scheme: dark) {
+      color: $linkDarkColor;
+    }
 
     @include media(">=desktop") {
       display: none;

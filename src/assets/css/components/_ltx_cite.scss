@@ -19,7 +19,10 @@
 
   // Combined tooltip progressive enhancement
   &.ltx_engrafo_tooltip {
-    color: $linkColor;
+    color: $linkLightColor;
+    @media (prefers-color-scheme: dark) {
+      color: $linkDarkColor;
+    }
 
     a.ltx_ref,
     a.ltx_ref:hover {
